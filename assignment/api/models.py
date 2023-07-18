@@ -50,6 +50,8 @@ class Breed(models.Model):
 
     def __str__(self):
         return self
+
+
 gender_choice = (
     ('Male','Male'),
     ('Female','Female')
@@ -58,7 +60,7 @@ gender_choice = (
 class Dog(models.Model):
     name = models.CharField(max_length=30)
     age = models.IntegerField()
-    breed =models.ForeignKey(Breed, on_delete=models.CASCADE)
+    breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
     gender = models.CharField(max_length=10,choices=gender_choice)
     color = models.CharField(max_length=10)
     food = models.CharField(max_length=20)
